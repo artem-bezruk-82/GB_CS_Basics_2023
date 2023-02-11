@@ -60,6 +60,16 @@ namespace hw_03_taskAdditional
                 }
             }
 
+            if (sumMax < (berries[0] + berries[1] + berries[berries.Length -1]))
+            {
+                sumMax = berries[0] + berries[1] + berries[berries.Length - 1];
+            }
+
+            if (sumMax < (berries[berries.Length - 1] + berries[berries.Length - 2] + berries[0]))
+            {
+                sumMax = berries[berries.Length - 1] + berries[berries.Length - 2] + berries[0];
+            }
+
             Console.WriteLine(sumMax);
         }
     }
