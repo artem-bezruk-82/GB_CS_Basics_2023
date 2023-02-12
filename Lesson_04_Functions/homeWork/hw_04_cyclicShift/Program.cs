@@ -14,46 +14,31 @@ namespace hw_04_cyclicShift
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 2, 3, 4, 5 };
-            int shift = -2;
-
-            //Random random = new Random();
-            //int n = random.Next(1, 106);
-
-            //int[] arr = new int[n];
-
-            //for (int i = 0; i < n; i++)
-            //{
-            //    arr[i] = random.Next(100);
-            //}
-
-            //int k = random.Next(1,106);
-
-            Console.WriteLine(string.Join(" ", arr));
-            Console.WriteLine($"{nameof(shift)}: {shift}");
-
-            shift %= arr.Length;
-
-            if (shift > 0)
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[n];
+            int[] result = new int[n];
+            for (int i = 0; i < n; i++)
+                array[i] = new Random().Next(1, 11); // [1, 10]
+            Console.WriteLine($"[{string.Join(", ", array)}]");
+            int k = Convert.ToInt32(Console.ReadLine());
+            k = k % n;
+            if (k > 0)
             {
-                for (int i = 0; i < shift; i++)
-                {
-                    (arr[i], arr[arr.Length - shift + i]) = (arr[arr.Length - shift + i], arr[i]);
-                    Console.WriteLine(string.Join(" ", arr));
-
-                }
+                for (int i = 0; i < k; i++)
+                    result[i] = array[n - k + i];
+                for (int i = 0; i < n - k; i++)
+                    result[k + i] = array[i];
+                Console.WriteLine($"[{string.Join(", ", result)}]");
             }
-
-            if (shift < 0)
+            else
             {
-                shift = -shift;
-                for (int i = shift; i < arr.Length; i++)
-                {
-                    (arr[i], arr[i - shift]) = (arr[i - shift], arr[i]);
-                    Console.WriteLine(string.Join(" ", arr));
-                }
+                k = (-1) * k;
+                for (int i = 0; i < k; i++)
+                    result[n - k + i] = array[i];
+                for (int i = 0; i < n - k; i++)
+                    result[i] = array[k + i];
+                Console.WriteLine($"[{string.Join(", ", result)}]");
             }
-
 
 
         }
