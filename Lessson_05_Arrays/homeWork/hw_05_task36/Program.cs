@@ -17,17 +17,17 @@ namespace hw_05_task36
                 arr[i] = random.Next(1,100);
             }
 
-            int sumOfEvenValues = 0;
+            int sumOfOddValues = 0;
 
             for (int i = 1; i < arr.Length; i++)
             {
-                if (i % 2 == 0)
+                if (i % 2 != 0)
                 {
-                    sumOfEvenValues += arr[i];
+                    sumOfOddValues += arr[i];
                 }
             }
 
-            Console.WriteLine($"{nameof(sumOfEvenValues)} = {sumOfEvenValues}");
+            Console.WriteLine($"{nameof(sumOfOddValues)} = {sumOfOddValues}");
         }
     }
 }
