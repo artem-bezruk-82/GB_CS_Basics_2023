@@ -14,44 +14,33 @@ namespace hw_04_cyclicShift
     {
         static void Main(string[] args)
         {
-
-            Random random = new Random();
-            int n = random.Next(1, 105);
-
-            //int[] arr = { 1, 2, 3, 4, 5 };
-            int[] arr = new int[n];
-
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[n];
+            int[] result = new int[n];
             for (int i = 0; i < n; i++)
+                array[i] = new Random().Next(1, 11); // [1, 10]
+            Console.WriteLine($"[{string.Join(", ", array)}]");
+            int k = Convert.ToInt32(Console.ReadLine());
+            k = k % n;
+            if (k > 0)
             {
-                arr[i] = random.Next(100);
+                for (int i = 0; i < k; i++)
+                    result[i] = array[n - k + i];
+                for (int i = 0; i < n - k; i++)
+                    result[k + i] = array[i];
+                Console.WriteLine($"[{string.Join(", ", result)}]");
+            }
+            else
+            {
+                k = (-1) * k;
+                for (int i = 0; i < k; i++)
+                    result[n - k + i] = array[i];
+                for (int i = 0; i < n - k; i++)
+                    result[i] = array[k + i];
+                Console.WriteLine($"[{string.Join(", ", result)}]");
             }
 
-            int k = random.Next(105);
 
-            Console.WriteLine(string.Join(" ", arr));
-            Console.WriteLine($"Shift: {k}");
-
-
-            if (k < 0)
-            {
-                k = Math.Abs(k);
-                k %= arr.Length;
-
-            }
-            else 
-            {
-                k %= arr.Length;
-                k = arr.Length - k;
-            }
-
-            for (int i = k; i < arr.Length; i++)
-            {
-                Console.Write($"{arr[i]} ");
-            }
-            for (int i = 0; i < k; i++)
-            {
-                Console.Write($"{arr[i]} ");
-            }
         }
     }
 }
