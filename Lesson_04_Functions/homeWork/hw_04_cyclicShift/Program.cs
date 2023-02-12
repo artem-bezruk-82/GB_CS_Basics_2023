@@ -14,44 +14,48 @@ namespace hw_04_cyclicShift
     {
         static void Main(string[] args)
         {
+            int[] arr = { 1, 2, 3, 4, 5 };
+            int shift = -2;
 
-            Random random = new Random();
-            int n = random.Next(1, 105);
+            //Random random = new Random();
+            //int n = random.Next(1, 106);
 
-            //int[] arr = { 1, 2, 3, 4, 5 };
-            int[] arr = new int[n];
+            //int[] arr = new int[n];
 
-            for (int i = 0; i < n; i++)
-            {
-                arr[i] = random.Next(100);
-            }
+            //for (int i = 0; i < n; i++)
+            //{
+            //    arr[i] = random.Next(100);
+            //}
 
-            int k = random.Next(105);
+            //int k = random.Next(1,106);
 
             Console.WriteLine(string.Join(" ", arr));
-            Console.WriteLine($"Shift: {k}");
+            Console.WriteLine($"{nameof(shift)}: {shift}");
+
+            shift %= arr.Length;
+
+            if (shift > 0)
+            {
+                for (int i = 0; i < shift; i++)
+                {
+                    (arr[i], arr[arr.Length - shift + i]) = (arr[arr.Length - shift + i], arr[i]);
+                    Console.WriteLine(string.Join(" ", arr));
+
+                }
+            }
+
+            if (shift < 0)
+            {
+                shift = -shift;
+                for (int i = shift; i < arr.Length; i++)
+                {
+                    (arr[i], arr[i - shift]) = (arr[i - shift], arr[i]);
+                    Console.WriteLine(string.Join(" ", arr));
+                }
+            }
 
 
-            if (k < 0)
-            {
-                k = Math.Abs(k);
-                k %= arr.Length;
 
-            }
-            else 
-            {
-                k %= arr.Length;
-                k = arr.Length - k;
-            }
-
-            for (int i = k; i < arr.Length; i++)
-            {
-                Console.Write($"{arr[i]} ");
-            }
-            for (int i = 0; i < k; i++)
-            {
-                Console.Write($"{arr[i]} ");
-            }
         }
     }
 }
