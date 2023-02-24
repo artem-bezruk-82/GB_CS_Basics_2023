@@ -23,6 +23,15 @@ namespace hw_07_task50
             try
             {
                 valueA = GetArray2DElementValue(array2D, 2, 4);
+            }
+            catch (Exception exc)
+            {
+
+                Console.WriteLine(exc.Message);
+            }
+
+            try
+            {
                 valueB = GetArray2DElementValue(array2D, 1, 7);
             }
             catch (Exception exc)
