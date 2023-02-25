@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_hw_transponition", "07_hw_transponition.csproj", "{3AD3CD22-9EBE-4521-9883-B36E4DBA2A0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AD3CD22-9EBE-4521-9883-B36E4DBA2A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD3CD22-9EBE-4521-9883-B36E4DBA2A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD3CD22-9EBE-4521-9883-B36E4DBA2A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD3CD22-9EBE-4521-9883-B36E4DBA2A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {002928B3-7522-4A34-ACDC-B7B4D01451B5}
+	EndGlobalSection
+EndGlobal
